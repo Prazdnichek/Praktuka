@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт з програмування</title>
+    <style>
+        body {
+            word-wrap: break-word;
+            font-family: Arial, sans-serif;
+            padding: 0;
+            
+            background-size: cover; /* збільшити / зменшити розмір, щоб покрити весь екран */
+            background-position: center; /* центрувати зображення на екрані */
+            background-repeat: no-repeat; /* не повторювати зображення */
+            height: 100vh; /* встановити висоту на весь екран */
+            margin: 0; /* видалити відступи */
+            color: black; /* колір тексту на задньому фоні */
+            font-size: 24px; /* розмір шрифту тексту на задньому фоні */
+          
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/1627106025_1-kartinkin-com-p-yuzhnaya-koreya-fon-krasivo-1.jpg'); /* Замініть на шлях до вашого другого файлу */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; /* Забезпечте, що другий фон знаходиться під першим */
+            font-size: 24px;
+        }
+
+        .menu-bar {
+            background-color: #666;
+            width: 50px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .menu-button {
+            background-color: #666;
+            width: 50px;
+            height: 57px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu-button:active {
+            background-color: red;
+            transform: scale(0.95);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 80%;
+            left: 100;
+            transform: translateY(-50%) rotate(270deg);
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+            white-space: nowrap;
+            display: block;
+            margin-bottom: 10px;
+            align-items: flex-start;
+            padding: 10px;
+        }
+
+        .social-link:hover {
+            color: #f1f1f1;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #555;
+            width: 150px;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .content {
+           
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 1200px; /* Наприклад, обмежити ширину блока до 600px */        
+            margin: 20px auto 0;
+            margin-top: 20px;
+        }
+        
+        .green-block {
+            background-color: #2ecc71; /* Green color */
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            border-radius: 8px;
+            margin-top: 20vh;
+            max-width: 1350px;
+            margin: 20px auto 0;
+            text-align: center;
+            display: flex;
+            font-size: 24px;
+        }
+
+        .blue-block {
+            background-color: #3498db;
+            padding: 20px;
+            color: white;
+            margin-top: 20px;
+            margin-left: 120px;
+            border-radius: 8px;
+            margin-top: 20vh;
+            margin-bottom: 20px;
+            max-width: 1500px;
+            text-align: justify;
+        }
+        
+        .image-container {
+            margin: 0 10px; /* отступ между изображениями */
+            text-align: center;
+            overflow: hidden; /* гарантирует применение границы к изображению */
+        }
+
+        .image-container img {
+            width: 1100px;
+            height: 700px;
+
+        }
+
+        footer {
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+        }
+        
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="menu-bar">
+        <div class="social-links">
+            <a class="social-link" href="#" target="_blank">Facebook</a>
+            <a class="social-link" href="#" target="_blank">Instagram</a>
+            <a class="social-link" href="#" target="_blank">Telegram</a>
+        </div>
+        <button class="menu-button" onclick="toggleNav()">☰</button>
+    </div>
+
+<nav id="sideNav">
+    <a href="Home.html" onclick="changePage('home')">Головна</a>
+    <a href="Menu.html" onclick="changePage('Menu')">Меню ресторану</a>
+    <a href="Contacts.html" onclick="changePage('contact')">Контакти</a>
+</nav>
+
+<div class="content" id="mainContent">
+    
+    <h1>Вітаємо вас в нашому ресторані "Боссам Блісс!"</h1>
+    
+    <h2>Ресторан Корейських Насолод</h2>
+    
+</div>
+    
+<div class="green-block">
+
+    <div class="image-container">
+        <img src="Images/12.jpg" alt="Изображение 2">
+    </div>
+
+    <div>
+        <h2>Наш маленький ресторан</h2>
+    </div>
+    
+</div>
+    
+<div class="blue-block">
+    <h3>Історія нашого ресторану</h3>
+    
+    <p>Одного дня в маленькому українському містечку наш герой, молодий кухар з ім'ям Артур, вирішив здійснити свою довгострокову мрію — відкрити унікальний ресторан. Він завжди цікавився культурою і кухнею різних країн, і особливо його серце вразила корейська кухня</p>
+    
+    <p>Артур вирішив приголомшити своїх співмістян, привносячи до свого міста частинку аутентичної корейської культури. Він вивчав рецепти, дивився відео уроки від корейських шеф-кухарів, та навіть вивчив основи корейської мови для того, щоб легше спілкуватися з гостями.</p>
+    
+    <p>Після тривалого пошуку відповідного приміщення Артур знайшов чудовий закуток, де вирішив розташувати свій майбутній ресторан. Він вирушив до Кореї, щоб особисто познайомитися з місцевою культурою та гастрономією. Там він не тільки дізнався багато нового про корейські страви, але й завів знайомства з деякими талановитими корейськими шефами.</p>
+    
+    <p>Повернувшись додому, Артур не тільки привіз із собою високоякісні інгредієнти, але і найняв деяких корейських кухарів для свого ресторану. Вони разом вдосконалювали рецепти, адаптуючи їх до місцевого смаку та доступних інгредієнтів.</p>
+    
+    <p>Відкриття ресторану стало подією для містечка. Люди приходили, щоб спробувати справжню корейську кухню і відчути атмосферу та гостинність Кореї. Ресторан швидко здобув популярність, а Артур став відомим кулінарним магом, який привів корейську кухню в серце України.</p>
+    
+    <p>Ресторан став не тільки місцем для смачної їжі, але й платформою для культурного обміну. Артур організовував тематичні заходи, майстер-класи та культурні вечори, щоб поділитися красою корейської традиції зі своєю громадою.</p>
+    
+    <p>Так ресторан Артура став не просто місцем для поїдання, а справжнім кулінарним шедевром та культурним центром, який об'єднав дві далекі країни через любов до їжі та бажання ділитися найкращим з усього світу.</p>
+    
+</div>
+    
+</div>
+    
+<footer>
+        <p>&copy; 2023 Ресторан Боссам Блісс. Усі права захищені.</p>
+</footer>    
+    
+<script>
+    function toggleNav() {
+        var nav = document.getElementById("sideNav");
+        nav.style.display = (nav.style.display === "block") ? "none" : "block";
+    }
+
+    function changePage(page) {
+        var content = document.getElementById("mainContent");
+        if (page === 'home') {
+            content.innerHTML = "<h2>Головна</h2>";
+        } else if (page === 'Menu') {
+            content.innerHTML = "<h2>Меню ресторану</h2>";
+        } else if (page === 'contact') {
+            content.innerHTML = "<h2>Контакти</h2>";
+        }
+
+        // Закриваємо меню після
+        var nav = document.getElementById("sideNav");
+        nav.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

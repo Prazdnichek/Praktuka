@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Сайт з програмування</title>
+    <style>
+        body {
+            word-wrap: break-word;
+            font-family: Arial, sans-serif;
+            padding: 0;
+            
+            background-size: cover; /* збільшити / зменшити розмір, щоб покрити весь екран */
+            background-position: center; /* центрувати зображення на екрані */
+            background-repeat: no-repeat; /* не повторювати зображення */
+            height: 100vh; /* встановити висоту на весь екран */
+            margin: 0; /* видалити відступи */
+            color: black; /* колір тексту на задньому фоні */
+            font-size: 24px; /* розмір шрифту тексту на задньому фоні */
+          
+        }
+        
+        body::after {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('Images/1627106025_1-kartinkin-com-p-yuzhnaya-koreya-fon-krasivo-1.jpg'); /* Замініть на шлях до вашого другого файлу */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: -1; /* Забезпечте, що другий фон знаходиться під першим */
+            font-size: 24px;
+        }
+
+        .menu-bar {
+            background-color: #666;
+            width: 50px;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            box-sizing: border-box;
+        }
+
+        .menu-button {
+            background-color: #666;
+            width: 50px;
+            height: 57px;
+            color: white;
+            padding: 10px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .menu-button:active {
+            background-color: red;
+            transform: scale(0.95);
+        }
+
+        .social-links {
+            display: flex;
+            flex-direction: row;
+            position: absolute;
+            top: 80%;
+            left: 100;
+            transform: translateY(-50%) rotate(270deg);
+        }
+
+        .social-link {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            transition: color 0.3s;
+            white-space: nowrap;
+            display: block;
+            margin-bottom: 10px;
+            align-items: flex-start;
+            padding: 10px;
+        }
+
+        .social-link:hover {
+            color: #f1f1f1;
+        }
+
+        nav {
+            display: none;
+            position: absolute;
+            top: 50px;
+            left: 0;
+            background-color: #555;
+            width: 150px;
+            padding: 10px;
+            z-index: 1;
+        }
+
+        nav a {
+            display: block;
+            color: white;
+            text-decoration: none;
+            padding: 8px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #777;
+        }
+
+        .menu-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin: 10px 0;
+        }
+
+        .content {
+           
+            padding: 10px;
+            text-align: center;
+            border-radius: 8px;
+            max-width: 1200px; /* Наприклад, обмежити ширину блока до 600px */        
+            margin: 20px auto 0;
+            margin-top: 20px;
+        }
+
+        footer {
+            background-color: #666;
+            color: #fff;
+            text-align: center;
+            padding: 1px;
+        }
+        
+        table {
+            background-color: silver;
+            width: 80%; /* Set the width to 70% */
+            margin: 0 auto; /* Center the table on the page */
+            border-collapse: collapse;
+            border: 2px solid #333;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #333;
+            padding: 8px;
+            text-align: left;
+        }
+        
+        td {
+            text-align: justify;
+        }
+
+        th {
+            background-color: #444;
+            color: #fff;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        section {
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="menu-bar">
+        <div class="social-links">
+            <a class="social-link" href="#" target="_blank">Facebook</a>
+            <a class="social-link" href="#" target="_blank">Instagram</a>
+            <a class="social-link" href="#" target="_blank">Telegram</a>
+        </div>
+        <button class="menu-button" onclick="toggleNav()">☰</button>
+    </div>
+
+<nav id="sideNav">
+    <a href="Home.html" onclick="changePage('home')">Головна</a>
+    <a href="Menu.html" onclick="changePage('Menu')">Меню ресторану</a>
+    <a href="Contacts.html" onclick="changePage('contact')">Контакти</a>
+</nav>
+
+<div class="content" id="mainContent">
+    
+    <h1>Вітаємо вас в нашому ресторані "Боссам Блісс!"</h1>
+    
+    <h2>Ресторан Корейських Насолод</h2>
+    
+    <section id="menu">
+        <h3>Гарячі страви:</h3>
+    <table>
+        <tr>
+            <th>Страва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+        </tr>
+        <tr>
+            <td>Бібімбап (Bibimbap)</td>
+            <td>Традиційна корейська страва, що складається з різноманітних інгредієнтів, таких як овочі, м'ясо (зазвичай яловичина або свинина), яйце і гострий паста з перцю кочучого. Усі ці компоненти розташовуються на вершині гарячого рису.</td>
+            <td>Ціна: 460 гривень (400 г)</td>
+        </tr>
+        <tr>
+            <td>Кімчіжіге (Kimchi Jjigae)</td>
+            <td>Гарячий гуляш на основі кімчі (квашеної капусти або редьки) і свинини. Це страва має гострий, кислий смак і часто приправляється часником та імбирним соусом.</td>
+            <td>Ціна: 300 гривень (350 г)</td>
+        </tr>
+        <tr>
+            <td>Дакгальбі (Dakgalbi)</td>
+            <td>Гостра куриця, яка готується зі спеційним соусом на основі кімчі, соєвого соусу та сметани. Подається зі свіжими овочами, такими як морква та капуста.</td>
+            <td>Ціна: 400 гривень (450 г)</td>
+        </tr>
+        <tr>
+            <td>Самгётан (Samgyetang)</td>
+            <td>Традиційна корейська куряча супова страва. Головний інгредієнт - це молода курка, начинена рисом, часником і женьшенем. Суп подається гарячим і вважається освіжаючим влітку і розогріваючим взимку.</td>
+            <td>Ціна: 800 гривень (500 г)</td>
+        </tr>
+        <tr>
+            <td>Покумбап (Pork Bulgogi)</td>
+            <td>Гостре свиняче м'ясо, мариноване в соєвому соусі, сметані, часнику та інших спеціях, і смажене на вогні. Подається з рисом та свіжими овочами.</td>
+            <td>Ціна: 720 гривень (400 г)</td>
+        </tr>
+    </table>
+
+    <h3>Холодні страви:</h3>
+    <table>
+        <tr>
+            <th>Страва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+        </tr>
+        <tr>
+            <td>Намуль (Namul)</td>
+            <td>Холодна корейська страва, приготована з різноманітних варених або сироїних овочів, таких як шпинат, гірчиця, редька і морква, заливається сусіном (паста з квасолі) та приправляється кунжутом.</td>
+            <td>Ціна: 300 гривень (300 г)</td>
+        </tr>
+        <tr>
+            <td>Мульнаэнчім (Mulnaengmyeon)</td>
+            <td>Холодна локшина зі свіжими овочами, яйцем і льодом, заливана холодним бульйоном на основі соєвого соусу та гірчиці. Часто приправляється гострою гірчицею та корейським яблучним оцтом.</td>
+            <td>Ціна: 350 гривень (350 г)</td>
+        </tr>
+        <tr>
+            <td>Хаэмуль Паджжорі (Haemul Pajeon)</td>
+            <td>Холодна корейський панкейк з морепродуктами, зеленим луком і овочами. Подається з особливим соусом на основі соєвого соусу та оцту.</td>
+            <td>Ціна: 720 гривень (450 г)</td>
+        </tr>
+        <tr>
+            <td>Конггуксу (Kongguksu)</td>
+            <td>Холодний суп, приготований на основі соєвого молока та подається з вареними пшеничними локшинами. Ця страва освіжає влітку та має ніжний, але насичений смак.</td>
+            <td>Ціна: 480 гривень (350 г)</td>
+        </tr>
+        <tr>
+            <td>Оймучимчи (Oimuchim)</td>
+            <td>Холодна страва із маринованого свіжого лосося з овочами, такими як огірки, морква і редька. Подається під соусом на основі соєвого соусу, часнику та сирку.</td>
+            <td>Ціна: 800 гривень (400 г)</td>
+        </tr>
+    </table>
+
+    <h3>Напої:</h3>
+    <table>
+        <tr>
+            <th>Страва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+        </tr>
+        <tr>
+            <td>Макгулли (Makgeolli)</td>
+            <td>Традиційний корейський рисовий напій. Виготовляється шляхом брожіння та фільтрації суміші води, рисового супу і дріжджів. Має легкий, освіжаючий смак та низький вміст алкоголю.</td>
+            <td>Ціна: 250 гривень (500 мл)</td>
+        </tr>
+        <tr>
+            <td>Йеджу (Yuja) Ча (Cha)</td>
+            <td>Гарячий чай зі соком і шкіркою яблука йеджу (корейського цитрусового фрукта). Цей ароматний чай має солодкий, гіркий та кислий смак.</td>
+            <td>Ціна: 350 гривень (1 л)</td>
+        </tr>
+        <tr>
+            <td>Суль (Sool)</td>
+            <td>Альтернативний напій, виготовлений з квасолі. Має неперевершений смак та може бути газованим або безгазовим. Доступний у різних смаках і варіантах, включаючи фруктові та трав'яні добавки.</td>
+            <td>Ціна: 400 гривень (750 мл)</td>
+        </tr>
+        <tr>
+            <td>Чікен Макгеолли (Chicken Makgeolli)</td>
+            <td>Варіація макгуллі, в якій додається солодке печене куряче м'ясо. Цей напій має цікавий комбінований смак</td>
+            <td>Ціна: 250 гривень (500 мл)</td>
+        </tr>
+        <tr>
+            <td>Ссамжа (Ssamja)</td>
+            <td>Традиційна корейська горілка, яка виготовляється з рису. Цей напій має м'який, гладкий смак і може бути поданий як аперитив або доповнення до страв.</td>
+            <td>Ціна: 800 гривень (700 мл)</td>
+        </tr>
+    </table>
+
+    <h3>Десерты:</h3>
+    <table>
+        <tr>
+            <th>Страва</th>
+            <th>Опис</th>
+            <th>Ціна</th>
+        </tr>
+        <tr>
+            <td>Біндеддук (Bindaetteok)</td>
+            <td>корейські мундирчики, приготовані з масленого бобового тіста та різноманітних начинок, таких як креветки, кальмари і зелень. Подається з соусом на основі соєвого соусу, часнику та кунжуту.</td>
+            <td>Ціна: 250 гривень (200 г)</td>
+        </tr>
+        <tr>
+            <td>Патбінсу (Patbingsu)</td>
+            <td>популярний корейський десерт, що складається з тонких стружок льоду, адзуки (солодка фасоль) та різних топінгів, таких як фрукти, коктейльні гелі та різні солодкі сиропи.</td>
+            <td>Ціна: 280 гривень (400 г)</td>
+        </tr>
+        <tr>
+            <td>Ходжігва (Hotteok)</td>
+            <td>популярні корейські пляцки, виготовлені зі солодкого тіста та начинені цукром, медом, горіхами і корицею. Подаються гарячими і м'якими.</td>
+            <td>Ціна: 180 гривень (4 шт)</td>
+        </tr>
+        <tr>
+            <td>Макаруни (Makaron)</td>
+            <td>колоритні амбітні десерти з різноманітними начинками, такими як кавовий крем, фруктові пюре та морозиво. Мають легку текстуру та яскравий смак.</td>
+            <td>Ціна: 300 гривень (6 шт)</td>
+        </tr>
+        <tr>
+            <td>Тайяк (Taiyaki)</td>
+            <td>традиційні корейські рибки з вареного тіста, начинені солодкою пастилою, морозивом чи фруктовими начинками. Страва має оригінальну форму риби і неперевершений смак.</td>
+            <td>Ціна: 150 гривень (2 шт)</td>
+        </tr>
+    </table>    
+    </section>
+</div>
+    
+
+    
+
+    
+</div>
+    
+<footer>
+        <p>&copy; 2023 Ресторан Боссам Блісс. Усі права захищені.</p>
+</footer>    
+    
+<script>
+    function toggleNav() {
+        var nav = document.getElementById("sideNav");
+        nav.style.display = (nav.style.display === "block") ? "none" : "block";
+    }
+
+    function changePage(page) {
+        var content = document.getElementById("mainContent");
+        if (page === 'home') {
+            content.innerHTML = "<h2>Головна</h2>";
+        } else if (page === 'Menu') {
+            content.innerHTML = "<h2>Меню</h2>";
+        } else if (page === 'contact') {
+            content.innerHTML = "<h2>Контакти</h2>";
+        }
+
+        // Закриваємо меню після
+        var nav = document.getElementById("sideNav");
+        nav.style.display = "none";
+    }
+</script>
+
+</body>
+</html>
